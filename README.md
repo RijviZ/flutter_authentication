@@ -11,10 +11,10 @@ Star⭐ the repo if you like what you see😉.
 
 ## 📸 ScreenShots
 
-<img src="assets/ss/1.jpg" width="250"/> <img src="assets/ss/2.png" width="250"/>
-<img src="assets/ss/3.png" width="250"/> <img src="assets/ss/4.jpg" width="250"/>
-<img src="assets/ss/5.jpg" width="250"/> <img src="assets/ss/6.jpg" width="250"/>
-<img src="assets/ss/7.jpg" width="250"/> <img src="assets/ss/8.jpg" width="250"/>
+<img src="assets/ss/1.jpeg" width="250"/> <img src="assets/ss/2.jpeg" width="250"/>
+<img src="assets/ss/3.jpeg" width="250"/> <img src="assets/ss/4.jpeg" width="250"/>
+<img src="assets/ss/5.jpeg" width="250"/> <img src="assets/ss/6.jpeg" width="250"/>
+<img src="assets/ss/7.jpeg" width="250"/> <img src="assets/ss/8.jpeg" width="250"/>
 
 
 ## 🤓 Author(s)

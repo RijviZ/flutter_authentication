@@ -10,11 +10,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void _logOut() {
+    loginStatus();
+    Navigator.of(context).pushNamed('/welcome');
+  }
 
-    void _logOut(){
-      loginStatus();
-      Navigator.of(context).pushNamed('/welcome');
-    }
   @override
   Widget build(BuildContext context) {
     Color primary = Theme.of(context).primaryColor;
@@ -45,11 +45,12 @@ class _HomeState extends State<Home> {
           ),
         ],
         crossAxisAlignment: CrossAxisAlignment.stretch,
-      ),);
+      ),
+    );
   }
-    loginStatus() async {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.remove('isLogged');
-    }
-}
 
+  loginStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove('isLogged');
+  }
+}

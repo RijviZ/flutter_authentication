@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterauthentication/widgets/buttons.dart';
 import 'package:flutterauthentication/widgets/logo.dart';
 import 'package:flutterauthentication/widgets/user_input.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/bottom_clipper.dart';
 
@@ -41,13 +42,40 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         String email = prefs.getString('email');
         String password = prefs.getString('password');
         print(email + password);
-        print('jj');
         if (_emailController.text == email &&
             _passwordController.text == password) {
           prefs.setBool('isLogged', true);
           Navigator.of(context).pushNamed('/home');
-        } else
-          prefs.setBool('isLogged', true);
+        } else if (_emailController.text != email &&
+            _passwordController.text == password) {
+          showToast(
+            'Wrong Email',
+            duration: Duration(seconds: 3),
+            position: ToastPosition.bottom,
+            backgroundColor: Colors.red.shade900,
+            radius: 20.0,
+            textStyle: TextStyle(fontSize: 20.0, color: Colors.white),
+          );
+        } else if (_emailController.text == email &&
+            _passwordController.text != password) {
+          showToast(
+            'Wrong Password',
+            duration: Duration(seconds: 3),
+            position: ToastPosition.bottom,
+            backgroundColor: Colors.red.shade900,
+            radius: 20.0,
+            textStyle: TextStyle(fontSize: 20.0, color: Colors.white),
+          );
+        } else {
+          showToast(
+            'Wrong Email and Password',
+            duration: Duration(seconds: 3),
+            position: ToastPosition.bottom,
+            backgroundColor: Colors.red.shade900,
+            radius: 20.0,
+            textStyle: TextStyle(fontSize: 20.0, color: Colors.white),
+          );
+        }
       }
     }
 
@@ -144,10 +172,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(top:60.0),
+                                padding: const EdgeInsets.only(top: 60.0),
                                 child: Email(emailController: _emailController),
                               ),
-                              Password(passwordController: _passwordController, errorText: "Password must be six characters",),
+                              Password(
+                                passwordController: _passwordController,
+                                errorText: "Password must be six characters",
+                              ),
                             ],
                           ),
                         ),
@@ -280,7 +311,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           children: [
                             UserName(nameController: _nameController),
                             Email(emailController: _emailController),
-                            Password(passwordController: _passwordController, errorText: "Please enter a strong password",),
+                            Password(
+                              passwordController: _passwordController,
+                              errorText: "Please enter a strong password",
+                            ),
                           ],
                         ),
                       ),

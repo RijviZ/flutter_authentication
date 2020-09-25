@@ -5,7 +5,8 @@ class Email extends StatelessWidget {
   const Email({
     Key key,
     @required TextEditingController emailController,
-  }) : _emailController = emailController, super(key: key);
+  })  : _emailController = emailController,
+        super(key: key);
 
   final TextEditingController _emailController;
 
@@ -18,11 +19,9 @@ class Email extends StatelessWidget {
       child: TextFormField(
         controller: _emailController,
         obscureText: false,
-
         style: TextStyle(
           fontSize: 20,
         ),
-
         decoration: InputDecoration(
             hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             hintText: "EMAIL",
@@ -61,7 +60,10 @@ class Password extends StatelessWidget {
     Key key,
     @required TextEditingController passwordController,
     @required String errorText,
-  }) : _passwordController = passwordController, _errorText = errorText, super(key: key);
+  })
+      : _passwordController = passwordController,
+        _errorText = errorText,
+        super(key: key);
 
   final TextEditingController _passwordController;
   final String _errorText;
@@ -75,11 +77,9 @@ class Password extends StatelessWidget {
       child: TextFormField(
         controller: _passwordController,
         obscureText: true,
-
         style: TextStyle(
           fontSize: 20,
         ),
-
         decoration: InputDecoration(
             hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             hintText: "PASSWORD ",
@@ -99,12 +99,14 @@ class Password extends StatelessWidget {
             ),
             prefixIcon: Padding(
               child: IconTheme(
-                data: IconThemeData(color: Theme.of(context).primaryColor),
+                data: IconThemeData(color: Theme
+                    .of(context)
+                    .primaryColor),
                 child: Icon(Icons.lock),
               ),
               padding: EdgeInsets.only(left: 25, right: 10),
             )),
-        validator: MinLengthValidator(6,errorText: _errorText),
+        validator: MinLengthValidator(6, errorText: _errorText),
       ),
     );
   }
@@ -114,7 +116,9 @@ class UserName extends StatelessWidget {
   const UserName({
     Key key,
     @required TextEditingController nameController,
-  }) : _nameController = nameController, super(key: key);
+  })
+      : _nameController = nameController,
+        super(key: key);
 
   final TextEditingController _nameController;
 
@@ -128,11 +132,9 @@ class UserName extends StatelessWidget {
       child: TextFormField(
         controller: _nameController,
         obscureText: false,
-
         style: TextStyle(
           fontSize: 20,
         ),
-
         decoration: InputDecoration(
             hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             hintText: "DISPLAY NAME",
@@ -152,12 +154,15 @@ class UserName extends StatelessWidget {
             ),
             prefixIcon: Padding(
               child: IconTheme(
-                data: IconThemeData(color: Theme.of(context).primaryColor),
+                data: IconThemeData(color: Theme
+                    .of(context)
+                    .primaryColor),
                 child: Icon(Icons.account_circle),
               ),
               padding: EdgeInsets.only(left: 25, right: 10),
             )),
-        validator: MinLengthValidator(3,errorText: "Please enter a valid name"),
+        validator:
+        MinLengthValidator(3, errorText: "Please enter a valid name"),
       ),
     );
   }

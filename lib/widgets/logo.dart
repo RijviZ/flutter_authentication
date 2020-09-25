@@ -12,16 +12,16 @@ class Logo extends StatelessWidget {
           children: <Widget>[
             Positioned(
                 child: Container(
-                  child: Align(
-                    child: Container(
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.white),
-                      width: 250,
-                      height: 250,
-                    ),
-                  ),
-                  height: 160,
-                )),
+              child: Align(
+                child: Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: Colors.white),
+                  width: 250,
+                  height: 250,
+                ),
+              ),
+              height: 160,
+            )),
             Positioned(
               child: Container(
                   height: 154,
@@ -42,8 +42,8 @@ class Logo extends StatelessWidget {
               bottom: MediaQuery.of(context).size.height * 0.04,
               right: MediaQuery.of(context).size.width * 0.2,
               child: Container(
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.white),
+                decoration:
+                BoxDecoration(shape: BoxShape.circle, color: Colors.white),
               ),
             ),
             Positioned(
@@ -52,8 +52,8 @@ class Logo extends StatelessWidget {
               bottom: 0,
               right: MediaQuery.of(context).size.width * 0.32,
               child: Container(
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: Colors.white),
+                decoration:
+                BoxDecoration(shape: BoxShape.circle, color: Colors.white),
               ),
             ),
           ],

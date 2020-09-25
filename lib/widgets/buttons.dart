@@ -8,7 +8,9 @@ class Buttons extends StatelessWidget {
   final Color textColor;
   final Function function;
 
-  Buttons(this.text,this.splashColor,this.highlightColor,this.fillColor,this.textColor, this.function);
+  Buttons(this.text, this.splashColor, this.highlightColor, this.fillColor,
+      this.textColor, this.function);
+
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
@@ -17,8 +19,8 @@ class Buttons extends StatelessWidget {
       highlightColor: highlightColor,
       elevation: 0.0,
       color: fillColor,
-      shape: RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(50.0)),
+      shape:
+          RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
       child: Text(
         text,
         style: TextStyle(
